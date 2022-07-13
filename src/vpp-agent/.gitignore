@@ -1,0 +1,22 @@
+*.pyc
+*.so
+*.test
+*.out
+*.log
+
+# ignore IDE files
+.idea/*
+
+# ignore executables (extensionless files)
+/cmd/**/*
+!/cmd/**/
+!/cmd/**/*.*
+/examples/**/*
+!/examples/**/
+!/examples/**/*.*
+
+# top level dirs
+/vpp/
+/vendor/
+/.build/
+/report/

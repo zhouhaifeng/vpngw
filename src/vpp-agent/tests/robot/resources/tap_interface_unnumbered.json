@@ -1,0 +1,14 @@
+{
+  "name": "${name}",
+  "type": "TAP",
+  "enabled": ${enabled},
+  "phys_address": "${mac}",
+  "mtu": ${mtu},
+  "unnumbered": {
+    "interface_with_ip": "${interface_with_ip_name}"
+  },
+  "tap": {
+    "version": 2,
+    "host_if_name": "${host_if_name}"
+  }
+}

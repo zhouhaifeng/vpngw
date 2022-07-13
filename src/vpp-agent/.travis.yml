@@ -1,0 +1,109 @@
+---
+os: linux
+dist: xenial
+sudo: required
+
+language: go
+go:
+  - 1.x
+
+go_import_path: go.ligato.io/vpp-agent/v3
+
+services:
+  - docker
+
+git:
+  depth: 5
+  submodules: false
+
+cache:
+  directories:
+    - ${HOME}/.cache
+    - ${HOME}/gopath/pkg/mod
+
+install: true
+
+stages:
+  - Test
+  - Build&Test
+  - Integration
+  - name: E2E
+    if: ( type = push AND branch IN (master, dev) ) OR ( type IN (cron, api) ) OR ( commit_message =~ /^(test-e2e)/ )
+
+jobs:
+  include:
+    - stage: Build&Test
+      name: "Build"
+      script:
+        - make cmd
+        - make examples
+    - name: "Code linter"
+      script: make lint || true
+    - name: "Unit tests"
+      before_script:
+        - go get github.com/mattn/goveralls
+      script: make test-cover
+      after_success:
+        - goveralls -coverprofile=/tmp/coverage.out -service=travis-ci
+        - bash <(curl -s https://codecov.io/bash) -f /tmp/coverage.out -F unittests
+
+    - env: VPP_VERSION=2001
+      script:
+        - make verify-binapi
+        - make integration-tests
+    - env: VPP_VERSION=2005
+      script:
+        - make verify-binapi
+        - make integration-tests
+    - env: VPP_VERSION=2009
+      script:
+        - make verify-binapi
+        - make integration-tests
+    - env: VPP_VERSION=2101
+      script:
+        - make verify-binapi
+        - make integration-tests
+    - env: VPP_VERSION=2106
+      script:
+        - make verify-binapi
+        - make integration-tests
+
+    - env: VPP_VERSION=2001
+      script:
+        - make e2e-tests-cover
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -f /tmp/e2e-cov.out -F e2e
+    - env: VPP_VERSION=2005
+      script:
+        - make e2e-tests-cover
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -f /tmp/e2e-cov.out -F e2e
+    - env: VPP_VERSION=2009
+      script:
+        - make e2e-tests-cover
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -f /tmp/e2e-cov.out -F e2e
+    - env: VPP_VERSION=2101
+      script:
+        - make e2e-tests-cover
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -f /tmp/e2e-cov.out -F e2e
+    - env: VPP_VERSION=2106
+      script:
+        - make e2e-tests-cover
+      after_success:
+        - bash <(curl -s https://codecov.io/bash) -f /tmp/e2e-cov.out -F e2e
+
+#  allow_failures:
+#    - env: VPP_VERSION=2009
+
+notifications:
+  slack:
+    rooms:
+      - ligato:xLH4aTwGx1dexPaloAegQ74O
+    on_success: change
+    on_failure: always
+    template:
+      - "Build <%{build_url}|#%{build_number}> of *%{repository_slug}* on branch _%{branch}_ in PR: <%{pull_request_url}|#%{pull_request_number}>"
+      - "> `%{commit_subject}` _by %{author}_ (<%{compare_url}|%{commit}>)"
+      - "*%{message}* (_%{duration}_)"

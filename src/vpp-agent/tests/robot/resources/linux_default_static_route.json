@@ -1,0 +1,7 @@
+{
+  "outgoing_interface": "${interface}",
+  "scope": "GLOBAL",
+  "dst_network": "${destination_network}",
+  "gw_addr": "${next_hop}",
+  "metric": ${metric}
+}

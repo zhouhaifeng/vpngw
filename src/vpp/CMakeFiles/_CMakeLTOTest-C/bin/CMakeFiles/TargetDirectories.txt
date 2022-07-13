@@ -1,0 +1,4 @@
+/home/zhf/src/network/sdwan/vpngw/src/vpp/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/rebuild_cache.dir
+/home/zhf/src/network/sdwan/vpngw/src/vpp/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/edit_cache.dir
+/home/zhf/src/network/sdwan/vpngw/src/vpp/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/boo.dir
+/home/zhf/src/network/sdwan/vpngw/src/vpp/CMakeFiles/_CMakeLTOTest-C/bin/CMakeFiles/foo.dir

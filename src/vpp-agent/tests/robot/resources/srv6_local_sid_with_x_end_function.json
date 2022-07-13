@@ -1,0 +1,9 @@
+{
+  "sid": "${sidAddress}",
+  "installation_vrf_id": ${installationVrfId},
+  "end_function_X": {
+    "psp" : ${psp},
+    "outgoing_interface":"${outinterface}",
+    "next_hop":"${nexthop}"
+  }
+}

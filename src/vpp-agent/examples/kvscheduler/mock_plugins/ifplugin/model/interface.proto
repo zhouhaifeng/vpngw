@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package mock.interfaces;
+
+option go_package = "go.ligato.io/vpp-agent/v3/examples/kvscheduler/mock_plugins/ifplugin/model;mock_interfaces";
+
+message Interface {
+    enum Type {
+        UNDEFINED_TYPE = 0;
+        LOOPBACK = 1;
+        TAP = 2;
+    };
+
+    string name = 1;         /* interface name (in our simplified example used as both logical and host name) */
+    Type type = 2;           /* interface type */
+    bool enabled = 3;        /* interface admin status (UP/DOWN) */
+    string phys_address = 4; /* interface MAC address */
+};
+

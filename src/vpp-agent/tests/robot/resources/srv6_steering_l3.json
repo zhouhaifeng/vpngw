@@ -1,0 +1,8 @@
+{
+  "name": "${name}",
+  "l3_traffic": {
+    "installation_vrf_id": ${installationVrfId},
+    "prefix_address": "${prefixAddress}"
+  },
+  "policy_bsid": "${bsid}"
+}

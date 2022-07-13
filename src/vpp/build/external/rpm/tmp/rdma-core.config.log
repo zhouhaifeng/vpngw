@@ -1,0 +1,113 @@
+-- The C compiler identification is GNU 4.8.5
+-- Check for working C compiler: /usr/lib64/ccache/cc
+-- Check for working C compiler: /usr/lib64/ccache/cc - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Performing Test HAVE_NO_SPARSE
+-- Performing Test HAVE_NO_SPARSE - Success
+-- Performing Test HAVE_C_WARNINGS
+-- Performing Test HAVE_C_WARNINGS - Success
+-- Performing Test HAVE_C_WMISSING_PROTOTYPES
+-- Performing Test HAVE_C_WMISSING_PROTOTYPES - Success
+-- Performing Test HAVE_C_WMISSING_DECLARATIONS
+-- Performing Test HAVE_C_WMISSING_DECLARATIONS - Success
+-- Performing Test HAVE_C_WWRITE_STRINGS
+-- Performing Test HAVE_C_WWRITE_STRINGS - Success
+-- Performing Test HAVE_C_WFORMAT_2
+-- Performing Test HAVE_C_WFORMAT_2 - Success
+-- Performing Test HAVE_C_WCAST_FUNCTION
+-- Performing Test HAVE_C_WCAST_FUNCTION - Failed
+-- Performing Test HAVE_C_WFORMAT_NONLITERAL
+-- Performing Test HAVE_C_WFORMAT_NONLITERAL - Success
+-- Performing Test HAVE_C_WDATE_TIME
+-- Performing Test HAVE_C_WDATE_TIME - Failed
+-- Performing Test HAVE_C_WNESTED_EXTERNS
+-- Performing Test HAVE_C_WNESTED_EXTERNS - Success
+-- Performing Test HAVE_C_WORKING_SHADOW
+-- Performing Test HAVE_C_WORKING_SHADOW - Success
+-- Performing Test HAVE_C_WORKING_MISSING_FIELD_INITIALIZERS
+-- Performing Test HAVE_C_WORKING_MISSING_FIELD_INITIALIZERS - Failed
+-- Performing Test HAVE_C_WNO_MISSING_FIELD_INITIALIZERS
+-- Performing Test HAVE_C_WNO_MISSING_FIELD_INITIALIZERS - Success
+-- Performing Test HAVE_NO_STRICT_ALIASING
+-- Performing Test HAVE_NO_STRICT_ALIASING - Success
+-- Performing Test HAVE_NO_VAR_TRACKING_ASSIGNMENTS
+-- Performing Test HAVE_NO_VAR_TRACKING_ASSIGNMENTS - Success
+-- Performing Test HAVE_FUNC_ATTRIBUTE_IFUNC
+-- Performing Test HAVE_FUNC_ATTRIBUTE_IFUNC - Failed
+-- Performing Test HAVE_FUNC_ATTRIBUTE_SYMVER
+-- Performing Test HAVE_FUNC_ATTRIBUTE_SYMVER - Failed
+-- Performing Test HAS_CLOEXEC
+-- Performing Test HAS_CLOEXEC - Success
+-- Performing Test HAVE_FUNC_ATTRIBUTE_ALWAYS_INLINE
+-- Performing Test HAVE_FUNC_ATTRIBUTE_ALWAYS_INLINE - Success
+-- Performing Test HAVE_LONG_LONG_U64
+-- Performing Test HAVE_LONG_LONG_U64 - Success
+-- Performing Test HAVE_GLIBC_UAPI_COMPAT
+-- Performing Test HAVE_GLIBC_UAPI_COMPAT - Success
+-- Performing Test HAVE_WORKING_STRICT_ALIASING
+-- Performing Test HAVE_WORKING_STRICT_ALIASING - Success
+-- Performing Test HAVE_LARGE_FILES
+-- Performing Test HAVE_LARGE_FILES - Success
+-- Looking for stdatomic.h
+-- Looking for stdatomic.h - not found
+-- Performing Test HAVE_TARGET_SSE
+-- Performing Test HAVE_TARGET_SSE - Success
+-- Performing Test SUPPORTS_AS_NEEDED
+-- Performing Test SUPPORTS_AS_NEEDED - Success
+-- Performing Test SUPPORTS_NO_UNDEFINED
+-- Performing Test SUPPORTS_NO_UNDEFINED - Success
+-- Performing Test _LDSYMVER_SUCCESS
+-- Performing Test _LDSYMVER_SUCCESS - Success
+-- Found LDSymVer: GNU  
+-- Could NOT find pandoc (missing: PANDOC_EXECUTABLE PANDOC_VERSION_STRING) 
+-- Could NOT find rst2man (missing: RST2MAN_EXECUTABLE RST2MAN_VERSION_STRING) 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.27.1") 
+-- Could NOT find UDev (missing: LIBUDEV_LIBRARY) 
+-- Check size of long
+-- Check size of long - done
+-- Performing Test HAVE_COHERENT_DMA
+-- Performing Test HAVE_COHERENT_DMA - Success
+-- Could NOT find Systemd (missing: SYSTEMD_LIBRARIES LIBSYSTEMD_INCLUDE_DIRS) 
+-- Performing Test LIBC_HAS_LIBRT
+-- Performing Test LIBC_HAS_LIBRT - Success
+-- Performing Test HAVE_STATIC_ASSERT
+-- Performing Test HAVE_STATIC_ASSERT - Failed
+-- Performing Test HAVE_C_WSTRICT_PROTOTYPES
+-- Performing Test HAVE_C_WSTRICT_PROTOTYPES - Success
+-- Performing Test HAVE_C_WOLD_STYLE_DEFINITION
+-- Performing Test HAVE_C_WOLD_STYLE_DEFINITION - Success
+-- Performing Test HAVE_C_WREDUNDANT_DECLS
+-- Performing Test HAVE_C_WREDUNDANT_DECLS - Success
+-- Performing Test HAVE_GLIBC_GETRANDOM
+-- Performing Test HAVE_GLIBC_GETRANDOM - Failed
+-- Performing Test HAVE_GLIBC_FXSTAT
+-- Performing Test HAVE_GLIBC_FXSTAT - Success
+-- Missing Optional Items:
+--  Compiler attribute ifunc NOT supported
+--  Compiler attribute symver NOT supported, can not use LTO
+--  C11 stdatomic.h NOT available (old compiler)
+--  C11 static_assert NOT available (old compiler)
+--  Valgrind memcheck.h NOT enabled
+--  Valgrind drd.h NOT enabled
+--  neighbour resolution NOT enabled
+--  pandoc NOT found (using prebuilt man pages)
+--  rst2man NOT found (using prebuilt man pages)
+--  cython NOT found (disabling pyverbs)
+--  libsystemd NOT found (disabling features)
+--  libudev NOT found (disabling features)
+--  -Wmissing-field-initializers does NOT work
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /root/vpngw/src/vpp/build/external/rpm/tmp/build-rdma-core

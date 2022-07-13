@@ -1,0 +1,59 @@
+---
+name: CI
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  yamllint:
+    name: lint yaml
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v1
+      - name: Install yamllint
+        run: pip install --user yamllint
+      - name: Run yamllint
+        run: ~/.local/bin/yamllint -c .yamllint.yml .
+  checkproto:
+    name: check proto
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run check-proto
+        run: make check-proto
+  checkgomod:
+    name: check go.mod
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v1
+        with:
+          go-version: 1.17
+      - run: go mod tidy -v
+      - name: Check for changes in go.mod
+        run: |
+          git diff --name-only --exit-code go.mod || ( git diff && echo "Run go tidy to update go.mod" && false )
+  build:
+    name: build go
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v1
+        with:
+          go-version: 1.17
+      - run: |
+          go build -v ./...
+  unittest:
+    name: unit test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v1
+        with:
+          go-version: 1.17
+      - run: |
+          go test -v ./...

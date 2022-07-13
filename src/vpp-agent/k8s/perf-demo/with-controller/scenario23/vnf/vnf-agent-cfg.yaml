@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vnf-agent-cfg
+data:
+  etcd.conf: |
+    insecure-transport: true
+    dial-timeout: 1s
+    endpoints:
+     - "172.17.0.1:22379"
+  kafka.conf: |
+    addrs:
+     - "172.17.0.1:9092"

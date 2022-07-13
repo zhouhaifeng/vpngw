@@ -1,0 +1,6 @@
+{
+  "sid": "${sidAddress}",
+  "installation_vrf_id": ${installationVrfId},
+  "base_end_function": {
+  }
+}

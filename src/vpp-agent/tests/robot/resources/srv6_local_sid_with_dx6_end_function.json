@@ -1,0 +1,8 @@
+{
+  "sid": "${sidAddress}",
+  "installation_vrf_id": ${installationVrfId},
+  "end_function_DX6": {
+    "outgoing_interface":"${outinterface}",
+    "next_hop":"${nexthop}"
+  }
+}

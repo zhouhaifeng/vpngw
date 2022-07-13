@@ -1,0 +1,13 @@
+prefix=/root/vpngw/src/vpp/build/external/rpm/BUILDROOT/vpp-ext-deps-22.06-7.x86_64/opt/vpp/external/x86_64
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libmlx5
+Description: RDMA Core Userspace Library
+URL: https://github.com/linux-rdma/rdma-core
+Version: 1.22.39.1
+Libs: -L${libdir} -lmlx5 
+Libs.private: -lpthread
+Requires.private: libibverbs
+Cflags: -I${includedir}

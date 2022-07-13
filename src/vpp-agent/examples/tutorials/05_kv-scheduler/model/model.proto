@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package model;
+
+option go_package = "go.ligato.io/vpp-agent/v3/examples/tutorials/05_kv-scheduler/model;model";
+
+message Interface {
+    string name = 1;
+}
+
+message Route {
+    string name = 1;
+    string interface_name = 2;
+}
+
+
