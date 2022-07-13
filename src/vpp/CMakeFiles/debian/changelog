@@ -1,6 +1,6 @@
-vpp (22.06-release) unstable; urgency=low
+vpp () unstable; urgency=low
 
   * no description
 
- -- fd.io VPP <vpp-dev@fd.io>  Mon, 11 Jul 2022 23:40:23 +0800
+ -- fd.io VPP <vpp-dev@fd.io>  Thu, 14 Jul 2022 00:23:07 +0800
 
